@@ -175,6 +175,7 @@ document.body.insertBefore(
   categoryButtonsContainer,
   categoriesTitle.nextSibling
 );
+// comment in script
 
 Object.keys(categories).forEach((category) => {
   const button = document.createElement("button");
