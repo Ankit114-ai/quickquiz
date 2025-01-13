@@ -57,7 +57,7 @@ h1 {
 }
 
 #question {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 20px;
   font-weight: bold;
   color: #333;
@@ -68,7 +68,6 @@ h1 {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
-  
 }
 
 .option {
@@ -79,7 +78,7 @@ h1 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.50s;
+  transition: background 0.5s;
 }
 
 .option:hover {
@@ -94,9 +93,8 @@ h1 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition-timing-function:ease;
+  transition-timing-function: ease;
 
-  
   display: none;
 }
 
@@ -137,31 +135,36 @@ h1 {
 }
 
 @media (max-width: 425px) {
-  .body{
-    height:auto;
+  .body {
+    height: auto;
     width: 100%;
-    
-   
+  }
+  .category-container {
+    gap: 13px;
+    margin-top: 20px;
   }
   .category-button {
     width: 154px;
     height: 48px;
     font-size: 16px;
     border-radius: 15px;
-    /* gap: 20px; */
   }
   h1 {
     font-size: 28px;
+    margin-top: 30px;
+  }
+  .categories-title {
+    margin-top: 100px;
   }
   .quiz-container {
     height: auto;
     width: 230px;
     overflow: hidden;
+    margin-top: 75px;
   }
   .option {
     width: 150px;
     border-radius: 15px;
-
   }
   .options-container {
     align-items: center;
@@ -169,8 +172,8 @@ h1 {
 }
 .reset {
   background-color: rgba(131, 146, 146, 0.8);
-  height: 30px;
-  width: 60px;
+  height: 40px;
+  width: 70px;
   font-size: 16px;
   margin-top: 8px;
   border: 1px solid black;
@@ -180,7 +183,7 @@ h1 {
   transition: transform 0.9s;
   display: flex;
   align-items: center;
-
+  justify-content: center;
 }
 .reset:hover {
   background: rgba(110, 121, 117, 0.868);
@@ -194,9 +197,8 @@ h1 {
 
 .reset:active,
 #next-button:active {
-  transform: scale(0.95); 
+  transform: scale(0.95);
 }
-
 
 .category-button,
 .option,
@@ -207,20 +209,20 @@ h1 {
 
 .category-button:active,
 .option:active {
-  transform: scale(0.97); 
+  transform: scale(0.97);
 }
 
 .reset:hover {
   background: rgba(110, 121, 117, 0.868);
   color: white;
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .option:hover {
-  transform: scale(1.05); 
-  background: #006bb3; 
+  transform: scale(1.05);
+  background: #006bb3;
 }
 
 .option:active {
-  transform: scale(0.97); 
+  transform: scale(0.97);
 }

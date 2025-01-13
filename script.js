@@ -163,7 +163,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 const quizContainer = document.querySelector(".quiz-container");
-// quizContainer.style.display = "none"; 
+// quizContainer.style.display = "none";
 const categoryButtonsContainer = document.createElement("div");
 const categoriesTitle = document.createElement("h1");
 categoriesTitle.textContent = "Select Categories";
@@ -175,7 +175,6 @@ document.body.insertBefore(
   categoryButtonsContainer,
   categoriesTitle.nextSibling
 );
-// comment in script
 
 Object.keys(categories).forEach((category) => {
   const button = document.createElement("button");
@@ -206,6 +205,7 @@ resetButton.onclick = resetQuiz;
 function loadQuestion() {
   const currentQuestion = selectedCategory[currentQuestionIndex];
   questionElement.textContent = currentQuestion.question;
+  quizContainer.style.marginTop = "75px";
   optionsElements.forEach((button, index) => {
     button.textContent = currentQuestion.options[index];
     button.classList.remove("correct", "wrong");
@@ -241,6 +241,7 @@ function nextQuestion() {
     nextButton.style.display = "none";
     scoreElement.textContent = `Final Score: ${score}`;
     resetButton.style.display = "block";
+    quizContainer.style.marginTop = "200px";
   }
 }
 
