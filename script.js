@@ -254,3 +254,9 @@ function resetQuiz() {
   score = 0;
   scoreElement.textContent = `Score: ${score}`;
 }
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/serviceWorker.js')
+      .then(() => console.log('Service Worker registered successfully!'))
+      .catch(err => console.error('Service Worker registration failed:', err));
+}
