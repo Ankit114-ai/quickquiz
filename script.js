@@ -1,4 +1,4 @@
-console.log("running script");
+console.log("running script B");
 
 const categories = {
   geographical: [
@@ -358,7 +358,7 @@ function resetQuiz() {
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/serviceWorker.js')
+  navigator.serviceWorker.register('./serviceWorker.js')
     .then(registration => {
       console.log('Service Worker registered with scope:', registration.scope);
     })
