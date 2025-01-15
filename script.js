@@ -1,3 +1,5 @@
+console.log("running script");
+
 const categories = {
   geographical: [
     {
@@ -6,9 +8,29 @@ const categories = {
       correct: 2,
     },
     {
+      question:"In which region is Nepal mainly situated?",
+      options: ["Himalayas", "Indo-Gangetic Plain", "Tibet", "Bhutan"],
+      correct: 0,
+    },
+    {
+      question:"What type of crops are predominantly grown in Africa?",
+      options: ["Cereal Crops", "Root Crops", "Cash Crops", "Oil Crops"],
+      correct: 1,
+    },
+    {
       question: "Which continent is the Sahara Desert located on?",
       options: ["Asia", "Africa", "Australia", "South America"],
       correct: 1,
+    },
+    {
+      question:"Sir Thomas Stamford Raffles is known to be a founder of which of the following modern nations?",
+      options: ["Vatican City", "Singapore", "Cyprus", "New Zea Land"],
+      correct: 1,
+    },
+    {
+      question:"The Big Splat theory is related to the origin of which among the following?",
+      options: ["Moon", "Sun", "Volcanoes", "Universe"],
+      correct: 0,
     },
     {
       question: " Which country produces the maximum sugar in the world?",
@@ -24,12 +46,32 @@ const categories = {
       question: "'Death Valley' is located in?",
       options: ["California US", "Kerala, India", "Israel", "Saudi Arabia"],
       correct: 0,
-    },
+    }
   ],
   games_and_sport: [
     {
       question: "Which sport is known as the 'king of sports'?",
       options: ["Basketball", "Football", "Tennis", "Cricket"],
+      correct: 1,
+    },
+    {
+      question:"Which country will host the 2024 Summer Olympic Games?",
+      options: ["United States of America", "China", "France", "Japan"],
+      correct: 2,
+    },
+    {
+      question:"Which country became the runners-up of the 2019 FIBA Basketball World Cup?",
+      options: ["Spain", "Argentina", "France", "Australia"],
+      correct: 1,
+    },
+    {
+      question:"Which sport is also known as “ping-pong”?",
+      options: ["Tennis", "Table Tennis", "Ludo", "Karate"],
+      correct: 1,
+    },
+    {
+      question:"The first official handball match was played in which country?",
+      options: ["Switzerland", "Germany", "Canada", "England"],
       correct: 1,
     },
     {
@@ -57,6 +99,26 @@ const categories = {
     {
       question: "Who is known as the father of the computer?",
       options: ["Alan Turing", "Charles Babbage", "Steve Jobs", "Bill Gates"],
+      correct: 1,
+    },
+    {
+      question:"In which decade was the American Institute of Electrical Engineers (AIEE) founded?",
+      options: ["1850s", "1880s", "1930s", "1950s"],
+      correct: 2,
+    },
+    {
+      question:"'OS' computer abbreviation usually means ?",
+      options: ["Order of Significance", "Open Software", "Operating System", "Optical Sensor"],
+      correct: 2,
+    },
+    {
+      question:"What does AM mean?",
+      options: ["Angelo marconi", "Anno median", "Amplitude modulation", "Amperes"],
+      correct: 2,
+    },
+    {
+      question:"The input used by an antenna or cable to a TV set uses frequencies called...?",
+      options: ["IF", "RF", "AF", "SAP"],
       correct: 1,
     },
     {
@@ -89,6 +151,26 @@ const categories = {
       question: "What is the chemical symbol for water?",
       options: ["O2", "H2O", "CO2", "H2"],
       correct: 1,
+    },
+    {
+      question:"The concept of gravity was discovered by which famous physicist?",
+      options: ["Albert Einstein", "Galileo Galilei", "Sir Isaac Newton", "Nikola Tesla"],
+      correct: 2,
+    },
+    {
+      question:"What is the name of the tallest grass on earth?",
+      options: ["Wheat", "Bamboo", "Sugarcane", "Corn"],
+      correct: 1,
+    },
+    {
+      question:"Which is the most abundant element in the universe?",
+      options: ["Oxygen", "Carbon", "Hydrogen", "Nitrogen"],
+      correct: 2,
+    },
+    {
+      question:"What is the study of mushrooms called?",
+      options: ["Botany", "Zoology", "Mycology", "Geology"],
+      correct: 2,
     },
     {
       question: "What planet is known as the Red Planet?",
@@ -131,6 +213,26 @@ const categories = {
       correct: 1,
     },
     {
+      question:"Who wrote the novel “War and Peace”?",
+      options: ["Anton Chekhov", "Fyodor Dostoevsky", "Leo Tolstoy", "Ivan Turgenev"],
+      correct: 2,
+    },
+    {
+      question:"Who was the last king of Nepal?",
+      options: ["Birendra Shah", "Gyanendra Shah", "Prithivi narayan Shah", "Ram Shah"],
+      correct: 1,
+    },
+    {
+      question:"Who was the founder of the Licchavi dynasty in Nepal?",
+      options: ["Amshuverma", " Shankhadhar Sakhwa", "Manadeva", "Anshuvarma"],
+      correct: 2,
+    },
+    {
+      question:"Which country did Nepal fight a war with in 1814-1816?",
+      options: ["Tibet", "China", "India", "Britain"],
+      correct: 3,
+    },
+    {
       question: "During which war was the Battle of Gettysburg fought?",
       options: [
         "World War I",
@@ -154,8 +256,8 @@ const categories = {
       question: "Greenland was a colony of which country until 1981?",
       options: ["Denmark", "Norway", "USA", "UK"],
       correct: 0,
-    },
-  ],
+    }
+  ]
 };
 
 let selectedCategory = [];
@@ -166,7 +268,7 @@ const quizContainer = document.querySelector(".quiz-container");
 // quizContainer.style.display = "none";
 const categoryButtonsContainer = document.createElement("div");
 const categoriesTitle = document.createElement("h1");
-categoriesTitle.textContent = "Select Categories";
+categoriesTitle.textContent = "Select Caategories";
 categoriesTitle.className = "categories-title";
 
 categoryButtonsContainer.className = "category-container";
@@ -257,6 +359,11 @@ function resetQuiz() {
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/serviceWorker.js')
-      .then(() => console.log('Service Worker registered successfully!'))
-      .catch(err => console.error('Service Worker registration failed:', err));
+    .then(registration => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(error => {
+      console.log('Service Worker registration failed:', error);
+    });
 }
+
